@@ -54,7 +54,7 @@ anagramme-game/
 
    ```bash
    git clone https://github.com/rodrigoarodrigues/Anagramme.git
-   cd anagramme-game
+   cd anagramme
    ```
 
 2. **Start the database with Docker**
