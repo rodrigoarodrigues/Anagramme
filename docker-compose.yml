@@ -4,37 +4,37 @@ services:
   # SQL Server Database
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: termo-sqlserver
+    container_name: anagramme-sqlserver
     ports:
       - "1433:1433"
     environment:
-      - SA_PASSWORD=TermoPassword123!
+      - SA_PASSWORD=AnagrammePassword123!
       - ACCEPT_EULA=Y
       - MSSQL_PID=Developer
     volumes:
       - sqlserver_data:/var/opt/mssql
       - ./database/scripts:/docker-entrypoint-initdb.d
     networks:
-      - termo-network
+      - anagramme-network
     healthcheck:
-      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TermoPassword123! -Q 'SELECT 1'"]
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AnagrammePassword123! -Q 'SELECT 1'"]
       interval: 30s
       timeout: 10s
       retries: 5
 
   # .NET API Backend
-  termo-api:
+  anagramme-api:
     build:
       context: ./backend
-      dockerfile: Termo.API/Dockerfile
-    container_name: termo-api
+      dockerfile: Anagramme.API/Dockerfile
+    container_name: anagramme-api
     ports:
       - "5000:5000"
       - "5001:5001"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:5000;https://+:5001
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=TermoDB;User Id=sa;Password=TermoPassword123!;TrustServerCertificate=true;
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=AnagrammeDB;User Id=sa;Password=AnagrammePassword123!;TrustServerCertificate=true;
       - ASPNETCORE_Kestrel__Certificates__Default__Password=password
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     volumes:
@@ -43,7 +43,7 @@ services:
       sqlserver:
         condition: service_healthy
     networks:
-      - termo-network
+      - anagramme-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
       interval: 30s
@@ -51,11 +51,11 @@ services:
       retries: 3
 
   # React Frontend
-  termo-frontend:
+  anagramme-frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: termo-frontend
+    container_name: anagramme-frontend
     ports:
       - "3000:3000"
     environment:
@@ -65,15 +65,15 @@ services:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
-      - termo-api
+      - anagramme-api
     networks:
-      - termo-network
+      - anagramme-network
     command: npm run dev -- --host 0.0.0.0
 
   # Nginx Reverse Proxy (for production-like setup)
   nginx:
     image: nginx:alpine
-    container_name: termo-nginx
+    container_name: anagramme-nginx
     ports:
       - "80:80"
       - "443:443"
@@ -81,10 +81,10 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/ssl:/etc/nginx/ssl:ro
     depends_on:
-      - termo-frontend
-      - termo-api
+      - anagramme-frontend
+      - anagramme-api
     networks:
-      - termo-network
+      - anagramme-network
     profiles:
       - production
 
@@ -93,5 +93,5 @@ volumes:
     driver: local
 
 networks:
-  termo-network:
+  anagramme-network:
     driver: bridge

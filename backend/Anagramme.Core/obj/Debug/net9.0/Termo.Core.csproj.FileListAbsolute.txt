@@ -1,0 +1,12 @@
+C:\Users\buuzik\termo-game\backend\Termo.Core\bin\Debug\net9.0\Termo.Core.deps.json
+C:\Users\buuzik\termo-game\backend\Termo.Core\bin\Debug\net9.0\Termo.Core.dll
+C:\Users\buuzik\termo-game\backend\Termo.Core\bin\Debug\net9.0\Termo.Core.pdb
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.AssemblyInfoInputs.cache
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.AssemblyInfo.cs
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.csproj.CoreCompileInputs.cache
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.dll
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\refint\Termo.Core.dll
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.pdb
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\ref\Termo.Core.dll
+C:\Users\buuzik\termo-game\backend\Termo.Core\obj\Debug\net9.0\Termo.Core.sourcelink.json

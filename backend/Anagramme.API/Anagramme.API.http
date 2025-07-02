@@ -1,0 +1,19 @@
+@AnagrammeAPI_HostAddress = http://localhost:5269
+
+# Start a new game
+POST {{AnagrammeAPI_HostAddress}}/api/game/start
+Content-Type: application/json
+
+###
+
+# Get game session status (replace with actual session ID)
+GET {{AnagrammeAPI_HostAddress}}/api/game/12345678-1234-1234-1234-123456789012
+Accept: application/json
+
+###
+
+# OpenAPI documentation (Development only)
+GET {{AnagrammeAPI_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###

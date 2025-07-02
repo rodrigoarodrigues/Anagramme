@@ -1,17 +1,17 @@
--- Termo Game Database Schema
--- This script creates the initial database schema for the Termo word game
+-- Anagramme Game Database Schema
+-- This script creates the initial database schema for the Anagramme word game
 
 USE master;
 GO
 
 -- Create database if it doesn't exist
-IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'TermoDB')
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'AnagrammeDB')
 BEGIN
-    CREATE DATABASE TermoDB;
+    CREATE DATABASE AnagrammeDB;
 END
 GO
 
-USE TermoDB;
+USE AnagrammeDB;
 GO
 
 -- Create Words table

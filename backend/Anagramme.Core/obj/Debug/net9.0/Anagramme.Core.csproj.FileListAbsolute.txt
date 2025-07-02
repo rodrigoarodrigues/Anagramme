@@ -1,0 +1,12 @@
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\bin\Debug\net9.0\Anagramme.Core.deps.json
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\bin\Debug\net9.0\Anagramme.Core.dll
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\bin\Debug\net9.0\Anagramme.Core.pdb
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.AssemblyInfoInputs.cache
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.AssemblyInfo.cs
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.csproj.CoreCompileInputs.cache
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.sourcelink.json
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.dll
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\refint\Anagramme.Core.dll
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\Anagramme.Core.pdb
+C:\Users\buuzik\termo-game\backend\Anagramme.Core\obj\Debug\net9.0\ref\Anagramme.Core.dll

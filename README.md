@@ -1,10 +1,10 @@
-# Termo - Brazilian Word Game Clone
+# Anagramme - Brazilian Word Game Clone
 
-A modern implementation of the popular Brazilian word-guessing game "Termo" (inspired by Wordle), built with .NET 9, React, TypeScript, and SQL Server.
+A modern implementation of the popular Brazilian word-guessing game "Anagramme" (inspired by Wordle), built with .NET 9, React, TypeScript, and SQL Server.
 
 ## 🎮 Game Description
 
-**Termo** is a daily word puzzle game where players have 6 attempts to guess a 5-letter Portuguese word. After each guess, the tiles change color to show how close your guess was to the word:
+**Anagramme** is a daily word puzzle game where players have 6 attempts to guess a 5-letter Portuguese word. After each guess, the tiles change color to show how close your guess was to the word:
 
 - 🟩 **Green**: Letter is in the word and in the correct position
 - 🟨 **Yellow**: Letter is in the word but in the wrong position  
@@ -21,12 +21,12 @@ A modern implementation of the popular Brazilian word-guessing game "Termo" (ins
 ## 📁 Project Structure
 
 ```
-termo-game/
+anagramme-game/
 ├── backend/                    # .NET 9 Backend
-│   ├── Termo.API/             # Web API project
-│   ├── Termo.Core/            # Domain models, interfaces
-│   ├── Termo.Infrastructure/  # Data access, services
-│   └── Termo.Tests/           # Unit tests
+│   ├── Anagramme.API/         # Web API project
+│   ├── Anagramme.Core/        # Domain models, interfaces
+│   ├── Anagramme.Infrastructure/  # Data access, services
+│   └── Anagramme.Tests/       # Unit tests
 ├── frontend/                  # React Frontend
 │   ├── src/                  # Source code
 │   ├── public/               # Static assets
@@ -53,7 +53,7 @@ termo-game/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd termo-game
+   cd anagramme-game
    ```
 
 2. **Start the database with Docker**
@@ -65,7 +65,7 @@ termo-game/
    ```bash
    cd backend
    dotnet restore
-   dotnet run --project Termo.API
+   dotnet run --project Anagramme.API
    ```
 
 4. **Run the frontend**
@@ -87,10 +87,10 @@ termo-game/
 docker-compose up --build
 
 # Start only specific services
-docker-compose up sqlserver termo-api
+docker-compose up sqlserver anagramme-api
 
 # View logs
-docker-compose logs -f termo-api
+docker-compose logs -f anagramme-api
 
 # Stop all services
 docker-compose down
@@ -102,12 +102,12 @@ The database is automatically created when running with Docker Compose. For manu
 
 1. **Create the database**
    ```bash
-   sqlcmd -S localhost -U sa -P TermoPassword123! -i database/scripts/01_create_schema.sql
+   sqlcmd -S localhost -U sa -P AnagrammePassword123! -i database/scripts/01_create_schema.sql
    ```
 
 2. **Seed sample data**
    ```bash
-   sqlcmd -S localhost -U sa -P TermoPassword123! -i database/scripts/02_seed_sample_words.sql
+   sqlcmd -S localhost -U sa -P AnagrammePassword123! -i database/scripts/02_seed_sample_words.sql
    ```
 
 ## 🎯 Features
@@ -151,10 +151,10 @@ cd backend
 dotnet test
 
 # Generate database migration
-dotnet ef migrations add MigrationName --project Termo.Infrastructure --startup-project Termo.API
+dotnet ef migrations add MigrationName --project Anagramme.Infrastructure --startup-project Anagramme.API
 
 # Apply migrations
-dotnet ef database update --project Termo.Infrastructure --startup-project Termo.API
+dotnet ef database update --project Anagramme.Infrastructure --startup-project Anagramme.API
 ```
 
 ### Frontend Development
@@ -177,10 +177,10 @@ npm run lint
 ### Database Management
 ```bash
 # Connect to SQL Server
-docker exec -it termo-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TermoPassword123!
+docker exec -it anagramme-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AnagrammePassword123!
 
 # Backup database
-docker exec termo-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TermoPassword123! -Q "BACKUP DATABASE TermoDB TO DISK = '/tmp/termo-backup.bak'"
+docker exec anagramme-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AnagrammePassword123! -Q "BACKUP DATABASE AnagrammeDB TO DISK = '/tmp/anagramme-backup.bak'"
 ```
 
 ## 📊 API Endpoints
@@ -204,7 +204,7 @@ docker exec termo-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Te
 ### Backend (.NET)
 ```env
 ASPNETCORE_ENVIRONMENT=Development
-ConnectionStrings__DefaultConnection=Server=localhost;Database=TermoDB;User Id=sa;Password=TermoPassword123!;TrustServerCertificate=true;
+ConnectionStrings__DefaultConnection=Server=localhost;Database=AnagrammeDB;User Id=sa;Password=AnagrammePassword123!;TrustServerCertificate=true;
 ```
 
 ### Frontend (React)
@@ -233,7 +233,7 @@ npm test
 docker-compose -f docker-compose.test.yml up --build
 
 # Run integration tests
-dotnet test backend/Termo.Tests.Integration
+dotnet test backend/Anagramme.Tests.Integration
 ```
 
 ## 📈 Performance Considerations
