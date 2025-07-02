@@ -53,7 +53,7 @@ anagramme-game/
 1. **Clone the repository**
 
    ```bash
-   git clone [<repository-url>](https://github.com/rodrigoarodrigues/Anagramme.git)
+   git clone https://github.com/rodrigoarodrigues/Anagramme.git
    cd anagramme-game
    ```
 
