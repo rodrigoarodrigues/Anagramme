@@ -7,7 +7,7 @@ A modern implementation of the popular Brazilian word-guessing game "Anagramme" 
 **Anagramme** is a daily word puzzle game where players have 6 attempts to guess a 5-letter Portuguese word. After each guess, the tiles change color to show how close your guess was to the word:
 
 - 🟩 **Green**: Letter is in the word and in the correct position
-- 🟨 **Yellow**: Letter is in the word but in the wrong position  
+- 🟨 **Yellow**: Letter is in the word but in the wrong position
 - ⬜ **Gray**: Letter is not in the word at all
 
 ## 🚀 Tech Stack
@@ -20,7 +20,7 @@ A modern implementation of the popular Brazilian word-guessing game "Anagramme" 
 
 ## 📁 Project Structure
 
-```
+```folder
 anagramme-game/
 ├── backend/                    # .NET 9 Backend
 │   ├── Anagramme.API/         # Web API project
@@ -51,17 +51,20 @@ anagramme-game/
 ### Local Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd anagramme-game
    ```
 
 2. **Start the database with Docker**
+
    ```bash
    docker-compose up sqlserver -d
    ```
 
 3. **Run the backend**
+
    ```bash
    cd backend
    dotnet restore
@@ -69,6 +72,7 @@ anagramme-game/
    ```
 
 4. **Run the frontend**
+
    ```bash
    cd frontend
    npm install
@@ -76,9 +80,9 @@ anagramme-game/
    ```
 
 5. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - API Documentation: http://localhost:5000/swagger
+   - Frontend: <http://localhost:3000>
+   - Backend API: <http://localhost:5000>
+   - API Documentation: <http://localhost:5000/openapi>
 
 ### Docker Development (Full Stack)
 
@@ -101,11 +105,13 @@ docker-compose down
 The database is automatically created when running with Docker Compose. For manual setup:
 
 1. **Create the database**
+
    ```bash
    sqlcmd -S localhost -U sa -P AnagrammePassword123! -i database/scripts/01_create_schema.sql
    ```
 
 2. **Seed sample data**
+
    ```bash
    sqlcmd -S localhost -U sa -P AnagrammePassword123! -i database/scripts/02_seed_sample_words.sql
    ```
@@ -113,18 +119,21 @@ The database is automatically created when running with Docker Compose. For manu
 ## 🎯 Features
 
 ### ✅ Implemented
+
 - [x] Project structure with .NET 9 and React+Vite
 - [x] Docker containerization setup
 - [x] Database schema design
 - [x] Sample Portuguese word data
 
 ### 🚧 In Progress
+
 - [ ] Core game logic implementation
 - [ ] API endpoints for game operations
 - [ ] React game interface
 - [ ] Word validation system
 
 ### 📋 Planned Features
+
 - [ ] Daily word challenges
 - [ ] Game statistics tracking
 - [ ] Share functionality
@@ -144,6 +153,7 @@ The database is automatically created when running with Docker Compose. For manu
 ## 🛠️ Development
 
 ### Backend Development
+
 ```bash
 cd backend
 
@@ -158,6 +168,7 @@ dotnet ef database update --project Anagramme.Infrastructure --startup-project A
 ```
 
 ### Frontend Development
+
 ```bash
 cd frontend
 
@@ -175,6 +186,7 @@ npm run lint
 ```
 
 ### Database Management
+
 ```bash
 # Connect to SQL Server
 docker exec -it anagramme-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AnagrammePassword123!
@@ -186,28 +198,33 @@ docker exec anagramme-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -
 ## 📊 API Endpoints
 
 ### Game Operations
+
 - `POST /api/game/start` - Start a new game session
 - `POST /api/game/guess` - Submit a word guess
 - `GET /api/game/status/{sessionId}` - Get current game state
 - `GET /api/game/daily` - Get today's daily challenge
 
 ### Word Operations
+
 - `GET /api/words/validate/{word}` - Check if word is valid
 - `GET /api/words/random` - Get a random word for practice
 
 ### Statistics
+
 - `GET /api/statistics/{playerId}` - Get player statistics
 - `POST /api/statistics` - Update player statistics
 
 ## 🌐 Environment Variables
 
 ### Backend (.NET)
+
 ```env
 ASPNETCORE_ENVIRONMENT=Development
 ConnectionStrings__DefaultConnection=Server=localhost;Database=AnagrammeDB;User Id=sa;Password=AnagrammePassword123!;TrustServerCertificate=true;
 ```
 
 ### Frontend (React)
+
 ```env
 VITE_API_URL=http://localhost:5000
 VITE_API_URL_HTTPS=https://localhost:5001
@@ -216,18 +233,21 @@ VITE_API_URL_HTTPS=https://localhost:5001
 ## 🧪 Testing
 
 ### Backend Tests
+
 ```bash
 cd backend
 dotnet test --verbosity normal
 ```
 
 ### Frontend Tests
+
 ```bash
 cd frontend
 npm test
 ```
 
 ### Integration Tests
+
 ```bash
 # Start test environment
 docker-compose -f docker-compose.test.yml up --build
@@ -246,6 +266,7 @@ dotnet test backend/Anagramme.Tests.Integration
 ## 🚀 Deployment
 
 ### Production Docker Build
+
 ```bash
 # Build production images
 docker-compose -f docker-compose.prod.yml build
@@ -255,6 +276,7 @@ docker-compose -f docker-compose.prod.yml up -d
 ```
 
 ### Environment Setup
+
 1. Configure production database connection strings
 2. Set up SSL certificates for HTTPS
 3. Configure reverse proxy (Nginx)
@@ -289,4 +311,4 @@ If you encounter any issues or have questions:
 
 ---
 
-**Happy word guessing! 🎯🇧🇷**
+## **Happy word guessing! 🎯🇧🇷**
