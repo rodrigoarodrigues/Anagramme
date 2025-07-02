@@ -1,6 +1,6 @@
 # Anagramme - Brazilian Word Game Clone
 
-A modern implementation of the popular Brazilian word-guessing game "Anagramme" (inspired by Wordle), built with .NET 9, React, TypeScript, and SQL Server.
+A modern implementation of the popular Brazilian word-guessing game "Termo" (inspired by Wordle), built with .NET 9, React, TypeScript, and SQL Server.
 
 ## 🎮 Game Description
 
